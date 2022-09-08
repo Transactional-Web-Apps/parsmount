@@ -31,12 +31,12 @@
         <br>
         <div>
        <h3 style="text-align: center;">About Us</h3>
-       <br>
-           <video src="../Resources/aboutvideo.MP4" width="620" height="340" type="video/mp4"  controls="controls" autoplay>
+      
+           <video src="../Resources/aboutvideo.MP4" width="640" height="400" style="padding: 45px" type="video/mp4" controls="controls" autoplay>
     
    </div>
 
-    <br>
+   
    <div>
       
        <strong style="padding: 45px">What is Parsmount?</strong>
