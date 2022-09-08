@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Login DataBase mySQL PHP</title>
 
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,7 @@
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
     <link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
     <link rel="stylesheet" href="../Resources/parsmount.css">
-	<title>Parsmount Website - About Us</title>
+	<title>Parsmount Website - About us</title>
 </head>
 <body>
 
