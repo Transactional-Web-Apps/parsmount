@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
 	<link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
-	<link rel="stylesheet" href="../parsmount.css">
+	<link rel="stylesheet" href="../Resources/parsmount.css">
 	<title>Parsmount Website - Sign in</title>
 </head>
 <body>
@@ -22,6 +22,7 @@
         <a href="index.php">Home</a>&nbsp;&nbsp;
         <a href="event.php">Event</a>&nbsp;&nbsp;       
         <a href="contact.php">Contact</a>&nbsp;&nbsp;
+		<a href="aboutus.php">About us</a>&nbsp;&nbsp;
 		<a href="signin.php">Sign in</a>&nbsp;&nbsp;
 		<a href="signup.php" id="current">Sign up</a>&nbsp;&nbsp;
     </nav>

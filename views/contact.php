@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
 	<link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
-	<link rel="stylesheet" href="../parsmount.css">
+	<link rel="stylesheet" href="../Resources/parsmount.css">
 	<title>Parsmount Website - Contact</title>
     <style>
         div {
@@ -53,12 +53,13 @@
     <a href="index.php">Home</a>&nbsp;&nbsp;
         <a href="event.php">Event</a>&nbsp;&nbsp;       
         <a href="contact.php" id="current">Contact</a>&nbsp;&nbsp;
+        <a href="aboutus.php">About us</a>&nbsp;&nbsp;
 		<a href="signin.php">Sign in</a>&nbsp;&nbsp;
     </nav>
     <div>
         <main>
            
-            <img src="contact.jpg" alt="contact" height="220" width="450" id="floatrightimg">
+            
             <br>
             <h3><span style="color:rgb(37, 88, 37)">Contact us Today!</span></h3><br>
 
@@ -72,7 +73,7 @@
                     type="text" name="phone" id="phone"> <br><br>
                 <label for="comment">* Comment: </label><textarea rows="2" cols="20" name="comment" id="comment"
                     required="true"></textarea><br><br>
-                &nbsp;&nbsp;&nbsp;<input type="submit" value="Submit"><br><br>
+                &nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" class="btn btn-primary"><br><br>
             </form>
             <br><br>
             <h3>Contact information</h3>

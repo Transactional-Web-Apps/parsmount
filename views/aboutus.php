@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
-	<link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
-	<link rel="stylesheet" href="../parsmount.css">
-	<title>Parsmount Website - Sign in</title>
+    <link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="../Resources/parsmount.css">
+	<title>Parsmount Website - About Us</title>
 </head>
 <body>
 
@@ -20,27 +20,27 @@
     <nav>
  
         <a href="index.php">Home</a>&nbsp;&nbsp;
-        <a href="event.php"id="current">About us</a>&nbsp;&nbsp;       
+        <a href="event.php">Event</a>&nbsp;&nbsp;      
         <a href="contact.php">Contact</a>&nbsp;&nbsp;
-		<a href="signin.php">Sign in</a>&nbsp;&nbsp;
-		<a href="signup.php">Sign up</a>&nbsp;&nbsp;
+        <a href="aboutus.php" id="current">About us</a>&nbsp;&nbsp; 
+		<a href="signin.php">Sign in</a>&nbsp;&nbsp;		
     </nav>
 
-<div class="container">
+<div>
 
 <section>
-        
+        <br>
         <div>
        <h3 style="text-align: center;">About Us</h3>
-      
-           <video src="Resources/aboutvideo.MP4" width="620" height="340" controls="controls">
+       <br>
+           <video src="../Resources/aboutvideo.MP4" width="620" height="340" type="video/mp4"  controls="controls" autoplay>
     
    </div>
 
-
+    <br>
    <div>
       
-       <strong style="padding: 45px">What is Parsmount?</strong><br />
+       <strong style="padding: 45px">What is Parsmount?</strong>
        <p style="padding: 45px">
            Lorem Ipsum is simply dummy text of the printing and
    typesetting industry. Lorem Ipsum has been the
