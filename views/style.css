@@ -1,0 +1,360 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+    padding: 30px;
+}
+
+
+* {
+    box-sizing: border-box
+}
+
+
+
+img {
+    vertical-align: middle;
+}
+
+
+
+
+
+
+.containercategories {
+    height: 200px;
+    position: relative;
+}
+
+.categories {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next, .text {
+        font-size: 11px
+    }
+}
+
+
+
+.middlebanner {
+    /* The image used */
+    background-image: url('../Resources/MiddleBanner.jpeg');
+    /* Full height */
+    height: 20%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bt {
+    text-align: center;
+    color: white;
+    padding: 200px;
+    font-size: 25px;
+}
+
+.component-4 {
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.relative-wrapper-one {
+    position: relative;
+}
+
+    .relative-wrapper-one:not(:last-of-type) {
+        margin-right: 21px;
+    }
+
+.lorem-ipsum-is-simply-dummy-text-of-the {
+    height: 41.41%;
+    width: 92.4%;
+    color: var(--dark-slate-gray);
+    display: flex;
+    position: absolute;
+    right: 15px;
+    bottom: -9.5px;
+    font-family: var(--inter-20-regular-family);
+    font-size: var(--inter-20-regular-size);
+    font-weight: var(--inter-20-regular-weight);
+    line-height: var(--inter-20-regular-line-height);
+}
+
+.flex-wrapper-three {
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url("https://static.overlay-tech.com/assets/01863e50-b3d0-45bc-99d2-9dcd25911930.svg");
+    padding: 14.5px 13.5px 237.5px;
+    position: relative;
+}
+
+.vector {
+    width: 91.24%;
+    height: 48.44%;
+    position: absolute;
+    left: 18.5px;
+    top: 26.5px;
+}
+
+.rectangle-7 {
+    width: 26.27%;
+    height: 8.98%;
+    position: absolute;
+    left: 30.5px;
+    top: 205.5px;
+}
+
+.sports {
+    width: 19.12%;
+    height: 5.86%;
+    color: var(--white);
+    position: absolute;
+    left: 48.5px;
+    top: 213.5px;
+    font-family: var(--inter-25-bold-family);
+    font-size: var(--inter-25-bold-size);
+    font-weight: var(--inter-25-bold-weight);
+    line-height: var(--inter-25-bold-line-height);
+}
+
+.sports-pic {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 27px;
+}
+
+.relative-wrapper-four {
+    margin-right: 19px;
+    position: relative;
+}
+
+.flex-wrapper-four {
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url("https://static.overlay-tech.com/assets/988f00a2-20f4-4a79-9726-bfc22be7c18a.svg");
+    padding: 14.5px 14.5px 237.5px 12.5px;
+    position: relative;
+}
+
+.rectangle-8 {
+    width: 27.88%;
+    height: 8.98%;
+    position: absolute;
+    left: 32.5px;
+    top: 201.5px;
+}
+
+.nature {
+    width: 19.12%;
+    height: 5.86%;
+    color: var(--white);
+    position: absolute;
+    left: 53.5px;
+    top: 207.5px;
+    font-family: var(--inter-25-bold-family);
+    font-size: var(--inter-25-bold-size);
+    font-weight: var(--inter-25-bold-weight);
+    line-height: var(--inter-25-bold-line-height);
+}
+
+.group-of-friends-trekking-with-backpacks {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 24px;
+}
+
+.relative-wrapper-two {
+    margin-right: 17px;
+    position: relative;
+}
+
+.lorem-ipsum-is-simply-dummy-text-of-the-two {
+    height: 41.41%;
+    width: 92.4%;
+    color: var(--dark-slate-gray);
+    display: flex;
+    position: absolute;
+    left: 16px;
+    bottom: -9.5px;
+    font-family: var(--inter-20-regular-family);
+    font-size: var(--inter-20-regular-size);
+    font-weight: var(--inter-20-regular-weight);
+    line-height: var(--inter-20-regular-line-height);
+}
+
+.flex-wrapper-one {
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url("https://static.overlay-tech.com/assets/de375fb4-11a5-499b-9872-8ffc3c0edef1.svg");
+    padding: 14.5px 13.5px 237.5px;
+    position: relative;
+}
+
+.rectangle-9 {
+    width: 24.88%;
+    height: 8.98%;
+    position: absolute;
+    left: 40.5px;
+    top: 194.5px;
+}
+
+.music {
+    width: 17.05%;
+    height: 5.86%;
+    color: var(--white);
+    position: absolute;
+    left: 58.5px;
+    top: 200.5px;
+    font-family: var(--inter-25-bold-family);
+    font-size: var(--inter-25-bold-size);
+    font-weight: var(--inter-25-bold-weight);
+    line-height: var(--inter-25-bold-line-height);
+}
+
+.ready-for-the-concert-2021-08-27-15-02-3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 25px;
+}
+
+.flex-wrapper-two {
+    background-size: 100% 100%;
+    background-position: center;
+    background-image: url("https://static.overlay-tech.com/assets/1863bb2a-dace-40cd-901f-28d58f7b19a1.svg");
+    padding: 14.5px 13.5px 237.5px;
+    position: relative;
+}
+
+.rectangle-10 {
+    width: 73.27%;
+    height: 8.98%;
+    position: absolute;
+    left: 37.5px;
+    top: 194.5px;
+}
+
+.traditional-ceremonies {
+    width: 65.67%;
+    height: 5.86%;
+    color: var(--white);
+    position: absolute;
+    left: 59.5px;
+    top: 200.5px;
+    font-family: var(--inter-25-bold-family);
+    font-size: var(--inter-25-bold-size);
+    font-weight: var(--inter-25-bold-weight);
+    line-height: var(--inter-25-bold-line-height);
+}
+
+.well-dressed-people-celebrating-new-year {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 26px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+
+
+
+   
+
+  
+
+
+
+/* Use a media query to add a breakpoint at 800px: */
+@media screen and (max-width: 800px) {
+    .left, .main, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 850px) {
+    footer {
+        padding: 20px 10% 20px 10%;
+    }
+
+    svg:hover {
+        fill: #000;
+        transition: 300ms ease-in;
+    }
+}
+
+@media screen and (min-width: 851px) {
+
+    footer {
+        width: 100%;
+        overflow: hidden;
+        padding: 50px 10% 20px 10%;
+    }
+
+    .mail {
+        display: block;
+        float: left;
+        width: 60%;
+        margin: 0;
+    }
+
+    .sub-nav {
+        display: block;
+        float: left;
+        margin: 0px 0 0px 0;
+        width: 40%;
+    }
+
+    .social-media {
+        float: left;
+        width: 100%;
+        display: block;
+    }
+
+    .copyright {
+        float: left;
+        display: block;
+        width: 100%;
+        font-size: 11px;
+    }
+}
