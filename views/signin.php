@@ -18,7 +18,7 @@
 
     <nav>
        
-        <a href="index.php">Home</a>&nbsp;&nbsp;
+        <a href="home.php">Home</a>&nbsp;&nbsp;
         <a href="event.php">Event</a>&nbsp;&nbsp;       
         <a href="contact.php">Contact</a>&nbsp;&nbsp;
 		<a href="aboutus.php">About us</a>&nbsp;&nbsp;

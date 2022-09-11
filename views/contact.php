@@ -50,7 +50,7 @@
     <header>Parsmount</header>
 
     <nav>
-    <a href="index.php">Home</a>&nbsp;&nbsp;
+    <a href="home.php">Home</a>&nbsp;&nbsp;
         <a href="event.php">Event</a>&nbsp;&nbsp;       
         <a href="contact.php" id="current">Contact</a>&nbsp;&nbsp;
         <a href="aboutus.php">About us</a>&nbsp;&nbsp;

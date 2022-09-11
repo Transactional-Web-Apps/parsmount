@@ -20,7 +20,7 @@
     </header>
 
     <nav>        
-        <a href="index.php" id="current">Home</a>&nbsp;&nbsp;
+        <a href="home.php" id="current">Home</a>&nbsp;&nbsp;
         <a href="event.php">Event</a>&nbsp;&nbsp;       
         <a href="contact.php">Contact</a>&nbsp;&nbsp;
         <a href="aboutus.php">About us</a>&nbsp;&nbsp;

@@ -313,9 +313,9 @@ body {
 }
 
 @media screen and (min-width: 650px) and (max-width: 850px) {
-    footer {
+    /* footer {
         padding: 20px 10% 20px 10%;
-    }
+    } */
 
     svg:hover {
         fill: #000;
@@ -325,11 +325,11 @@ body {
 
 @media screen and (min-width: 851px) {
 
-    footer {
+    /* footer {
         width: 100%;
         overflow: hidden;
         padding: 50px 10% 20px 10%;
-    }
+    } */
 
     .mail {
         display: block;

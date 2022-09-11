@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config>
+	<host>localhost</host>
+	<user>root</user>
+	<password></password>
+	<dbname>mvc</dbname>
+	<rooturl>http://localhost/parsmount</rooturl>
+</config>
