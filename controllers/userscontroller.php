@@ -21,7 +21,8 @@
 
             //$this->$action($params, $payload);
 
-            $this->data = $user->$action($params, $payload);
+            if($action != "home")
+                $this->data = $user->$action($params, $payload);
 
             // Determine which View to load.
             if($action == "list"){
@@ -41,6 +42,13 @@
                         $userview = new CreateUsers($this->data);
                 
                 }
+
+                else if ($action == "home"){
+                    
+                    // require(dirname(__DIR__)."/views/".$action."users".".php");
+                    if(class_exists("Home"))
+                         $userview = new Home();                 
+                 }
 
         }
 

@@ -9,19 +9,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
     <link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="../Resources/parsmount.css">
-    <link rel="stylesheet" href="style.css" />
+    <?php
+    echo '<link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css">';  ?>
+    <!-- <link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css"> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Parsmount Website - Home</title>
 </head>
 
 <body>
+
     <header>
         Parsmount
     </header>
 
-    <nav>        
-        <a href="home.php" id="current">Home</a>&nbsp;&nbsp;
-        <a href="event.php">Event</a>&nbsp;&nbsp;       
+    <nav> 
+        <?php
+    echo '<a href="'.ROOTURL.'/users/home/'.'">Home</a>&nbsp;&nbsp;';       
+        
+        echo '<a href="'.ROOTURL.'/views/event.php'.'">Event</a>&nbsp;&nbsp;';     ?>
+        <!-- <a href="home.php" id="current">Home</a>&nbsp;&nbsp; -->
+        <!-- <a href="event.php">Event</a>&nbsp;&nbsp;        -->
         <a href="contact.php">Contact</a>&nbsp;&nbsp;
         <a href="aboutus.php">About us</a>&nbsp;&nbsp;
 		<a href="signin.php">Sign in</a>&nbsp;&nbsp;
@@ -160,6 +167,14 @@
         }
     </script>
 
+<?php
+    class CreateHome{
+        function __construct(){
+
+        }        
+    }
+   ?>
+
 </body>
 
-</html>
+</html> 

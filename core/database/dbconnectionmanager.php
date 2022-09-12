@@ -9,7 +9,7 @@
 		private $dbname;
 
         function __construct(){
-            $config = simplexml_load_file(__DIR__.'/config.xml');           
+            $config = simplexml_load_file(dirname(__DIR__).'/config.xml');           
 
 			$this->host = $config->host;
 

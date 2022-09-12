@@ -41,6 +41,10 @@
                 include(__DIR__.'/views/'.$class_name.'.php'); 
             }
 
+            else if (file_exists(__DIR__.'/views/' .$class_name. '.php')){
+                include(__DIR__.'/views/'.$class_name.'.php'); 
+            }
+
         }
     );
 

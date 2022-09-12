@@ -71,7 +71,6 @@
 
         }
 
-
         // Funtion to get a user by its username
         // when is this function useful:
         //// search YES
