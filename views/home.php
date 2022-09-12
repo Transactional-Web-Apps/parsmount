@@ -10,8 +10,9 @@
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
     <link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
     <?php
-    echo '<link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css">';    
-    echo '<link rel="stylesheet" href="'.ROOTURL.'/views/style.css">';  ?>
+    echo '<link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css">';
+    ?>   
+     <!-- echo '<link rel="stylesheet" href="'.ROOTURL.'/views/style.css">';   -->
     <!-- <link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css"> -->
     <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Parsmount Website - Home</title>
@@ -39,7 +40,7 @@
    
     <img alt=""
             class="logo-png-1"
-            src="../Resources/logo.png" />
+            src="./Resources/logo.png" />
            
     <div class="wrap">
         <div class="bannertext>">
@@ -139,34 +140,7 @@
                 <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
             </i></p>
     </footer>
-    <script>
-        let slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
+    
 
 <?php
     class CreateHome{
