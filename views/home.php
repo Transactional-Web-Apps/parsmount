@@ -10,7 +10,8 @@
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
     <link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
     <?php
-    echo '<link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css">';  ?>
+    echo '<link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css">';    
+    echo '<link rel="stylesheet" href="'.ROOTURL.'/views/style.css">';  ?>
     <!-- <link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css"> -->
     <!-- <link rel="stylesheet" href="style.css" /> -->
     <title>Parsmount Website - Home</title>
