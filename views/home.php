@@ -40,7 +40,7 @@
    
     <img alt=""
             class="logo-png-1"
-            src="./Resources/logo.png" />
+            src="../Resources/logo.png" />
            
     <div class="wrap">
         <div class="bannertext>">
@@ -76,8 +76,6 @@
                 and scrambled it to make a type specimen book.
             </p>
             <div class="flex-wrapper-three">
-
-
                 <img alt=""
                     class="sports-pic"
                     src="https://static.overlay-tech.com/assets/93dcc6c4-c1f1-4f8e-bca0-d781a7dc6171.png" />
