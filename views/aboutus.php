@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
     <link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
-    <link rel="stylesheet" href="../Resources/parsmount.css">
+    <?php
+    echo '<link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css">';
+    ?>   
 	<title>Parsmount Website - About us</title>
 </head>
 <body>
@@ -18,11 +20,24 @@
 
     <nav>
  
-        <a href="home.php">Home</a>&nbsp;&nbsp;
-        <a href="event.php">Event</a>&nbsp;&nbsp;      
-        <a href="contact.php">Contact</a>&nbsp;&nbsp;
-        <a href="aboutus.php" id="current">About us</a>&nbsp;&nbsp; 
-		<a href="signin.php">Sign in</a>&nbsp;&nbsp;		
+    <?php
+            echo '<a href="'.ROOTURL.'/home/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            echo '<a href="'.ROOTURL.'/event/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            echo '<a href="'.ROOTURL.'/aboutus/" id="current">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            //echo '<a href="'.ROOTURL.'/signin/">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            if (session_status() === PHP_SESSION_NONE){
+                session_start();
+                if(!isset($_SESSION["username"]))
+                    session_destroy();
+            }                       
+            if(isset($_SESSION["username"])){
+                //echo '<a href="'.ROOTURL.'/logout/">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="'.ROOTURL.'/users/logout/'.$_SESSION["username"].'">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '<span style="color:green;font-size:1.2em">'.$_SESSION["username"].'</span>';                
+            } else
+                echo '<a href="'.ROOTURL.'/signin/">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+        ?>		
     </nav>
 
 <div>
@@ -32,8 +47,10 @@
         <div>
        <h3 style="text-align: center;">About Us</h3>
       
-           <video src="../Resources/aboutvideo.MP4" width="640" height="400" style="padding: 45px" type="video/mp4" controls="controls" autoplay>
-    
+           <!-- <video src="../Resources/aboutvideo.MP4" width="640" height="400" style="padding: 45px" type="video/mp4" controls="controls" autoplay> -->
+           <?php
+            echo '<video src="'.ROOTURL.'/Resources/aboutvideo.MP4" width="640" height="400" style="padding: 45px" type="video/mp4" controls="controls" autoplay>';
+            ?> 
    </div>
 
    
@@ -63,5 +80,13 @@
                 <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
             </i></p>
     </footer>
+
+    <?php
+    class Aboutus{
+        function __construct(){
+
+        }        
+    }
+   ?>
 </body>
 </html>

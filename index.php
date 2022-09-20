@@ -41,9 +41,9 @@
                 include(__DIR__.'/views/'.$class_name.'.php'); 
             }
 
-            else if (file_exists(__DIR__.'/views/' .$class_name. '.php')){
-                include(__DIR__.'/views/'.$class_name.'.php'); 
-            }
+            // else if (file_exists(__DIR__.'/views/' .$class_name. '.php')){
+            //     include(__DIR__.'/views/'.$class_name.'.php'); 
+            // }
 
         }
     );
@@ -58,40 +58,65 @@
     
     $paramsArray = array();
     $controllername = "";
+    if(!empty($_GET["action"])){          //echo $_GET["action"];
 
-    if(isset($_GET["params"]))
-        // Transform the URL parameters from a string into an array
-        $paramsArray = explode("=", $_GET["params"]);
+        if(isset($_GET["params"]))
+            // Transform the URL parameters from a string into an array
+            $paramsArray = explode("=", $_GET["params"]);
+            
+        /* Testing
+            var_dump($_GET);
+            echo "</br>";
+            echo $_GET["params"];
+            echo "</br>";
+            echo $_GET["action"];
+            echo "</br>";
+            var_dump($paramsArray);
+        */
         
-     /* Testing
-        var_dump($_GET);
-        echo "</br>";
-        echo $_GET["params"];
-        echo "</br>";
-        echo $_GET["action"];
-        echo "</br>";
-        var_dump($paramsArray);
-    */
-    
-    // htmlentities transforms the input by the user either from the URL or in a form's text field into
-    // just character symbols, to prevent malicious code injection.
-    $controllername = ucfirst(htmlentities($paramsArray[0]))."Controller";
+        // htmlentities transforms the input by the user either from the URL or in a form's text field into
+        // just character symbols, to prevent malicious code injection.
+        $controllername = ucfirst(htmlentities($paramsArray[0]))."Controller";
 
-    if(file_exists(__DIR__.'/controllers/' .$controllername. '.php')){
+        if(file_exists(__DIR__.'/controllers/' .$controllername. '.php')){
 
-        if(class_exists($controllername)){
+            if(class_exists($controllername)){
 
-            $controllername = new $controllername();
+                $controllername = new $controllername();
 
-            // Pass to the controller the request info and data
+                // Pass to the controller the request info and data
 
-            // How do we get the body/payload of the HTTP post request?
+                // How do we get the body/payload of the HTTP post request?
 
-            $payload =  file_get_contents('php://input');         //var_dump($payload);////////
+                $payload =  file_get_contents('php://input');         //var_dump($payload);////////
 
-            $controllername->index($_GET["action"], $paramsArray, $payload );
+                $controllername->index($_GET["action"], $paramsArray, $payload );
+            
+            }       
+        }
+
+    }
+    else{
         
-        }       
+        if(isset($_GET["params"]))        //params here is action 
+            $paramsArray = explode("=", $_GET["params"]);
+        if(empty($paramsArray[0]))
+            $paramsArray[0]="Home";
+        //$controllername = ucfirst(htmlentities($paramsArray[0]))."Controller";
+        if(file_exists(__DIR__.'/controllers/pagecontroller.php')) {             
+            if(class_exists('PageController')){
+                $pageController = new PageController();                
+                $pageController->index($paramsArray[0]);               
+            
+            }   
+        }
+
+
+
+        // include(__DIR__.'/controllers/pagecontroller.php');
+        // $pageController = new PageController();
+        // $pageController->index(); 
+
     }
 
 

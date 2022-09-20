@@ -26,24 +26,34 @@
 
     <nav> 
         <?php
-    echo '<a href="'.ROOTURL.'/users/home/'.'">Home</a>&nbsp;&nbsp;';       
-        
-        echo '<a href="'.ROOTURL.'/views/event.php'.'">Event</a>&nbsp;&nbsp;';     ?>
+            echo '<a href="'.ROOTURL.'/home/" id="current">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            echo '<a href="'.ROOTURL.'/event/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            echo '<a href="'.ROOTURL.'/aboutus/">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            if (session_status() === PHP_SESSION_NONE){
+                session_start();
+                if(!isset($_SESSION["username"]))
+                    session_destroy();
+            }                       
+            if(isset($_SESSION["username"])){
+                //echo '<a href="'.ROOTURL.'/logout/">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="'.ROOTURL.'/users/logout/'.$_SESSION["username"].'">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '<span style="color:green;font-size:1.2em">'.$_SESSION["username"].'</span>';                
+            } else
+                echo '<a href="'.ROOTURL.'/signin/">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+        ?>
         <!-- <a href="home.php" id="current">Home</a>&nbsp;&nbsp; -->
         <!-- <a href="event.php">Event</a>&nbsp;&nbsp;        -->
-        <a href="contact.php">Contact</a>&nbsp;&nbsp;
+        <!-- <a href="contact.php">Contact</a>&nbsp;&nbsp;
         <a href="aboutus.php">About us</a>&nbsp;&nbsp;
-		<a href="signin.php">Sign in</a>&nbsp;&nbsp;
+		<a href="signin.php">Sign in</a>&nbsp;&nbsp; -->
     </nav>
 
     <main>
-   
-    <img alt=""
-            class="logo-png-1"
-            src="../Resources/logo.png" />
-           
+    <?php echo '<img alt="" class="logo-png-1" src="'.ROOTURL.'/Resources/logo.png"/>'?>
+    <!-- <img alt="" class="logo-png-1" src="../Resources/logo.png" /> -->
     <div class="wrap">
-        <div class="bannertext>">
+        <div class="bannertext>">        
             <h1>Adventure Without Limit</h1>
             <h1>With Parsmount</h1>
         </div>
@@ -52,7 +62,8 @@
     
     
     <div class="middlebanner">
-    <img src="../Resources/MiddleBanner.jpeg"  Width="300" Height="300" />
+    <?php echo '<img src="'.ROOTURL.'/Resources/MiddleBanner.jpeg"  Width="300" Height="300" />' ?>
+    <!-- <img src="../Resources/MiddleBanner.jpeg"  Width="300" Height="300" /> -->
         <div class="bannertext>">
             <p class="bt">
                 By holding one hundred and fifty sports programs
@@ -141,7 +152,7 @@
     
 
 <?php
-    class CreateHome{
+    class Home{
         function __construct(){
 
         }        

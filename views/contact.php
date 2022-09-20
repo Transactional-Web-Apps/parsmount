@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icon.jpg" type="image/x-jpg">
 	<link rel="stylesheet" type= "text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
-	<link rel="stylesheet" href="../Resources/parsmount.css">
+    <?php
+    echo '<link rel="stylesheet" href="'.ROOTURL.'/Resources/parsmount.css">';
+    ?>   
 	<title>Parsmount Website - Contact</title>
     <style>
         div {
@@ -50,18 +52,31 @@
     <header>Parsmount</header>
 
     <nav>
-    <a href="home.php">Home</a>&nbsp;&nbsp;
-        <a href="event.php">Event</a>&nbsp;&nbsp;       
-        <a href="contact.php" id="current">Contact</a>&nbsp;&nbsp;
-        <a href="aboutus.php">About us</a>&nbsp;&nbsp;
-		<a href="signin.php">Sign in</a>&nbsp;&nbsp;
+    <?php
+            echo '<a href="'.ROOTURL.'/home/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            echo '<a href="'.ROOTURL.'/event/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/contact/" id="current">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            echo '<a href="'.ROOTURL.'/aboutus/">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            //echo '<a href="'.ROOTURL.'/signin/">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+            if (session_status() === PHP_SESSION_NONE){
+                session_start();
+                if(!isset($_SESSION["username"]))
+                    session_destroy();
+            }                       
+            if(isset($_SESSION["username"])){
+                //echo '<a href="'.ROOTURL.'/logout/">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="'.ROOTURL.'/users/logout/'.$_SESSION["username"].'">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+                echo '<span style="color:green;font-size:1.2em">'.$_SESSION["username"].'</span>';                
+            } else
+                echo '<a href="'.ROOTURL.'/signin/">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
+        ?>
     </nav>
     <div>
         <main>
            
             
             <br>
-            <h3><span style="color:rgb(37, 88, 37)">Contact us Today!</span></h3><br>
+            <h3><span style="color:rgb(37, 88, 37)">Contact us Today!</span></h3>
 
             <form>
                 <label for="fname">* First Name </label> <input type="text" name="fname" id="fname" required="true">
@@ -75,12 +90,12 @@
                     required="true"></textarea><br><br>
                 &nbsp;&nbsp;&nbsp;<input type="submit" value="Submit" class="btn btn-primary"><br><br>
             </form>
-            <br><br>
+            
             <h3>Contact information</h3>
             1234 Parsmount Website<br>
             Montreal CA<br>
-            H1R 2N3 <br><br>
-            514-123-4567
+            H1R 2N3 <br>
+            514-123-4567<br><br>
         </main>
     </div>
     <footer>
@@ -89,6 +104,14 @@
                 <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
             </i></p>
     </footer>
+
+    <?php
+    class Contact{
+        function __construct(){
+
+        }        
+    }
+   ?>
 
 </body>
 

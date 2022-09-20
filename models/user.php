@@ -48,7 +48,7 @@
 
         }
 
-        function create($params, $data){
+        function createuser($params, $data){
 
             if(!empty($data)){
 
@@ -68,6 +68,31 @@
             }
 
             return 0;
+
+        }
+
+        function getuser($params, $data){
+
+            // SQL Injection
+            // If the user on the HTML form types a username on a search form
+            // it will be passed as parameter to this function
+            // the user can inject malicious SQL code
+            // If the user types "user1; delete from users;"
+            ////  if just append/concatinate the parameter to the main query, the queyr becomes:
+            //// "select * from users where username = user1; delete from users;"
+            //// the query will cause the deletion of all users data.
+
+            $query = "select * from users where username = :username and password=:password";
+
+            $statement = $this->conn->prepare($query); 
+            
+            parse_str($data, $dataArray);
+
+            $statement->execute([ 'username' => $dataArray["username"]
+                    ,'password' => $dataArray["password"]                    
+                    ]);
+			
+			return $statement->fetchAll(PDO::FETCH_CLASS);           
 
         }
 
