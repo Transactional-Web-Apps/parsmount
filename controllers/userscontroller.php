@@ -3,6 +3,7 @@
    // namespace controllers\User;
     // We need to acces both User Model and View    
     require(dirname(__DIR__)."/models/user.php");
+    
 
     // Controller class
     class UsersController {
