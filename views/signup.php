@@ -22,15 +22,20 @@
  
 	<?php
             echo '<a href="'.ROOTURL.'/home/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
-            echo '<a href="'.ROOTURL.'/event/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/events/list/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
             echo '<a href="'.ROOTURL.'/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             echo '<a href="'.ROOTURL.'/aboutus/" id="current">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             //echo '<a href="'.ROOTURL.'/signin/">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             //echo '<a href="'.ROOTURL.'/signup/" id="current">Sign up</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             if (session_status() === PHP_SESSION_NONE){
+                session_name("parsmount");
+                //session_id("IDparsmount");
                 session_start();
-                if(!isset($_SESSION["username"]))
+                if(!isset($_SESSION["username"])) {
+                    if(session_id() !=  " " || isset($_COOKIE[session_name()]))
+                        setcookie(session_name(), " " , time()-3600, "/"); 
                     session_destroy();
+                }
             }                       
             if(isset($_SESSION["username"])){
                 //echo '<a href="'.ROOTURL.'/logout/">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';

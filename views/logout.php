@@ -4,7 +4,8 @@
 // if(isset($_GET["params"]))        //params here is action 
 //     $paramsArray = explode("=", $_GET["params"]);
 // session_name("parsmount".$paramsArray[1]);
-
+session_name("parsmount");
+//session_id("IDparsmount");
 session_start();
 
 $_SESSION = array(); // resetting the superglobal array

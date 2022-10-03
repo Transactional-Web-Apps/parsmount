@@ -22,14 +22,19 @@
        
 	<?php
             echo '<a href="'.ROOTURL.'/home/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
-            echo '<a href="'.ROOTURL.'/event/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/events/list/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
             echo '<a href="'.ROOTURL.'/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             echo '<a href="'.ROOTURL.'/aboutus/">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             //echo '<a href="'.ROOTURL.'/signin/" id="current">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             if (session_status() === PHP_SESSION_NONE){
+                session_name("parsmount");
+                //session_id("IDparsmount");
                 session_start();
-                if(!isset($_SESSION["username"]))
+                if(!isset($_SESSION["username"])) {
+                    if(session_id() !=  " " || isset($_COOKIE[session_name()]))
+                        setcookie(session_name(), " " , time()-3600, "/"); 
                     session_destroy();
+                }
             }                       
             if(isset($_SESSION["username"])){
                 //echo '<a href="'.ROOTURL.'/logout/">logout</a>&nbsp;&nbsp;&nbsp;&nbsp;';
@@ -56,23 +61,20 @@
 				<input type="text" name="username" id="username" class="form-control" required />
 		</div>
 		
-			<div class="form-group">
-				<label>Password</label>
-				<input type="password" name="password" class="form-control" required />
-			</div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" required />
+        </div>
 			
 		<button  type="submit" class="btn btn-primary"> Login </button>
 		&nbsp;&nbsp;
 		<!-- <a href="signup.php" style="color:blue">Sign up</a> -->
 		<?php
-		echo '<a href="'.ROOTURL.'/signup/" style="color:blue">Sign up</a>'; ?>
-		
+		echo '<a href="'.ROOTURL.'/signup/" style="color:blue">Sign up</a>'; ?>		
 		
 	</form>
 	</div>
-		
-
-
+    
 </div>
 </div>
 </div>

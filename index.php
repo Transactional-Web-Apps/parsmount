@@ -37,8 +37,8 @@
 
             // The same as above can be done for the view
 
-            else if (file_exists(__DIR__.'/views/' .$class_name. '.php')){
-                include(__DIR__.'/views/'.$class_name.'.php'); 
+            else if (file_exists(__DIR__.'/views/' .$class_name. '.php')){ 
+                include(__DIR__.'/views/'.$class_name.'.php');
             }
 
             // else if (file_exists(__DIR__.'/views/' .$class_name. '.php')){
@@ -58,11 +58,11 @@
     
     $paramsArray = array();
     $controllername = "";
-    if(!empty($_GET["action"])){          //echo $_GET["action"];
+    if(!empty($_GET["action"])){         
 
-        if(isset($_GET["params"]))
+        if(isset($_GET["params"]))       
             // Transform the URL parameters from a string into an array
-            $paramsArray = explode("=", $_GET["params"]);
+            $paramsArray = explode("=", $_GET["params"]);                   // echo $_GET["params"];
             
         /* Testing
             var_dump($_GET);
@@ -90,7 +90,7 @@
 
                 $payload =  file_get_contents('php://input');         //var_dump($payload);////////
 
-                $controllername->index($_GET["action"], $paramsArray, $payload );
+                $controllername->index($_GET["action"], $paramsArray, $payload );   //var_dump($_GET["action"]);  echo '<br>'; var_dump($paramsArray); echo '<br>';  echo $payload;
             
             }       
         }
@@ -118,5 +118,6 @@
         // $pageController->index(); 
 
     }
+
 
 ?>

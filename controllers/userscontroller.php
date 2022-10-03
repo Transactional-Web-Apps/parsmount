@@ -45,7 +45,9 @@
                 //var_dump($this->data[0]->username);                
                 // require(dirname(__DIR__)."/views/".$action."users".".php");
                 if (!empty($this->data)) {
-                    //session_name("parsmount".$this->data[0]->username);                    
+                    //session_name("parsmount".$this->data[0]->username);
+                    session_name("parsmount");
+                    //session_id("IDparsmount");                    
                     session_start();
                     $_SESSION["username"] = $this->data[0]->username;
                     if(class_exists("Home"))
