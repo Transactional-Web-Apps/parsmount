@@ -33,7 +33,7 @@
                 // require(dirname(__DIR__)."/views/".users.".php");
                 // we could use class_exists which invokes spl_autoload_register in index.php
                 if(class_exists("ListEvent")){    
-                    $eventview = new ListEvent($this->data);  
+                    $eventview = new ListEvent($this->data, $params[1]);  
                 } 
             }
 
@@ -42,7 +42,7 @@
                 // require(dirname(__DIR__)."/views/".users.".php");
                 // we could use class_exists which invokes spl_autoload_register in index.php
                 if(class_exists("CreateEvent")){
-                    $eventrview = new CreateEvent($this->data); 
+                    $eventrview = new CreateEvent($this->data, $params[1]); 
                 }            
             }
 

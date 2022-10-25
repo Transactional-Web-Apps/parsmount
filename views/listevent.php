@@ -28,7 +28,7 @@
     <nav>        
     <?php
             echo '<a href="'.ROOTURL.'/home/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
-            echo '<a href="'.ROOTURL.'/events/list/" id="current">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/events/list/0/" id="current">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
             echo '<a href="'.ROOTURL.'/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             echo '<a href="'.ROOTURL.'/aboutus/">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             //echo '<a href="'.ROOTURL.'/signin/">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';
@@ -62,63 +62,123 @@
 <?php
     class ListEvent{
          public $data;
-
-          function __construct($data){
+//change
+          function __construct($data, $page){
+            // $page = 1;
 
             $this->data = $data;
+            $this->perPage = 3;
+            // Number of pages equals to number of data devided by number of data per page
+            $this->pages = ceil(count($data) / $this->perPage);
 
-            $this->render();
+            
+            $this->renderFind();
+            $this->render($page);
+            $this->showPages($page);
 
           }
 
-          function render(){
+          function showPages($page){
+            
             $html ='<div class="container">
-                    <div class="login-box">            
+                    <div class="page-box">            
                     <div class="row" >   
-                    <div class="col-md-6">
-                    <form action="http://localhost/parsmount/events/list/" method="post">
-                        <div class="form-group">
-                                <label>Find Event</label>
-                                <input type="text" name="id" id="id" class="form-control" required />
-                        </div>
-                        <button  type="submit" class="btn btn-primary"> Find </button>
-                        </form> <br><br>';
+                    <div class="col-md-6">';
+
+            $previous = $page - 1;
+            $next = $page + 1;
+
+            if ($previous>=0){
+                $html .= '<a href="'.ROOTURL.'/events/list/'.$previous.'/" class="btn btn-primary"> Previous </button></a>'; 
+            }
+            $html .= "<td><b>Page </b></td>";
+            $html .= "<td>".($page+1)."</td>";
+            $html .= "<td><b> / </b></td>";
+            $html .= "<td>".$this->pages."</td>";
+            if ($next<$this->pages){
+                $html .= '<a href="'.ROOTURL.'/events/list/'.$next.'/" class="btn btn-primary"> Next </button></a>'; 
+            }
+
+            if(array_key_exists('previous', $_POST)) {
+                $this->render($previous);
+            }
+
+            if(array_key_exists('next', $_POST)) {
+                $this->render(1);
+            }
+
+            $html .= '</main>
+
+                    <footer>
+                        <p><i>
+                                Copyright &copy; 2022 Parsmount <br>
+                                <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
+                            </i></p>
+                    </footer>';
+            echo $html;
+            }
+
+            function renderFind(){
+  
+              $html ='<div class="container">
+                      <div class="login-box">            
+                      <div class="row" >   
+                      <div class="col-md-6">
+                      <form action="http://localhost/parsmount/events/list/0/" method="post">
+                          <div class="form-group">
+                                  <label>Find Event</label>
+                                  <input type="text" name="id" id="id" class="form-control" required />
+                          </div>
+                          <button  type="submit" class="btn btn-primary"> Find </button>
+                          </form> <br><br>';
 
             $html .= "<table>";
             $html .= "<tr>";
             $html .= "<td><b>name</b></td>
-                      <td><b>place</b></td>
-                      <td><b>description</b></td>
-                      <td><b>Picture</b></td>";
+                    <td><b>place</b></td>
+                    <td><b>description</b></td>
+                    <td><b>Picture</b></td>";
+                echo $html;
+                      }
+
+          function render($page){
+            //
+            $start = $page * $this->perPage;
+            //
+            $end = min(($page+1)* $this->perPage, count($this->data)) - 1;
+            $html = "<table>";
             $html .= "</tr>";
-    
-            foreach($this->data as $event){              
-              $html .= "<tr>";
-              $html .= "<td>".$event->name."</td>"
-                       ."<td>".$event->place."</td>"
-                       ."<td>".$event->description."</td>"
-                       .'<td><img src="'.ROOTURL.'/Resources/'.$event->picture.'" height=150 width=200></td>';
-              $html .= "</tr>";         
+            //
+            for($i = $start; $i <=$end; $i++){        
+                $html .= "<tr>";
+                $html .= "<td>".$this->data[$i]->name."</td>"
+                        ."<td>".$this->data[$i]->place."</td>"
+                        ."<td>".$this->data[$i]->description."</td>"
+                        .'<td><img src="'.ROOTURL.'/Resources/'.$this->data[$i]->picture.'" height=150 width=200></td>';
+                $html .= "</tr>";         
     
             }
+    
+            // foreach($this->data as $event){              
+            //   $html .= "<tr>";
+            //   $html .= "<td>".$event->name."</td>"
+            //            ."<td>".$event->place."</td>"
+            //            ."<td>".$event->description."</td>"
+            //            .'<td><img src="'.ROOTURL.'/Resources/'.$event->picture.'" height=150 width=200></td>';
+            //   $html .= "</tr>";         
+    
+            // }
             $html .= "</table>";
             
-            $html .='</div>                
-                    </div>
-                    </div>
-                    </div>';
-
-            $html .= '</main>
-
-                        <footer>
-                            <p><i>
-                                    Copyright &copy; 2022 Parsmount <br>
-                                    <a href="mailto:yourfirstname@yourlastname.com">yourfirstname@yourlastname.com</a>
-                                </i></p>
-                        </footer>';
+            // $html .='</div>                
+            //         </div>
+            //         </div>
+            //         </div>';
 
     
             echo $html;
+            // $this->showPages($page);
+
     
             //echo '<a href="'.ROOTURL.'/events/create/'.'">Create a User</a>';
 

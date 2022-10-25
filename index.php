@@ -62,7 +62,7 @@
 
         if(isset($_GET["params"]))       
             // Transform the URL parameters from a string into an array
-            $paramsArray = explode("=", $_GET["params"]);                   // echo $_GET["params"];
+            $paramsArray = explode("=", $_GET["params"]);
             
         /* Testing
             var_dump($_GET);

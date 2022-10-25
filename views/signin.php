@@ -22,7 +22,7 @@
        
 	<?php
             echo '<a href="'.ROOTURL.'/home/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
-            echo '<a href="'.ROOTURL.'/events/list/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/events/list/0/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
             echo '<a href="'.ROOTURL.'/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             echo '<a href="'.ROOTURL.'/aboutus/">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             //echo '<a href="'.ROOTURL.'/signin/" id="current">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;';

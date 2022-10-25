@@ -27,7 +27,7 @@
     <nav> 
         <?php
             echo '<a href="'.ROOTURL.'/home/" id="current">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;';
-            echo '<a href="'.ROOTURL.'/events/list/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
+            echo '<a href="'.ROOTURL.'/events/list/0/">Event</a>&nbsp;&nbsp;&nbsp;&nbsp;';     
             echo '<a href="'.ROOTURL.'/contact/">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             echo '<a href="'.ROOTURL.'/aboutus/">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;';
             if (session_status() === PHP_SESSION_NONE){

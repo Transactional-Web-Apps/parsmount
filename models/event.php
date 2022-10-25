@@ -28,9 +28,11 @@
 
         }
 
-        function list($params, $data){       
+        function list($params, $data){     
 
-            if(empty($params[1])){          //var_dump($data);        //echo '<script>alert('.$params[1].');</script>';
+
+            if(empty($params[2])){ 
+                //echo "here"."<br>";         //var_dump($data);        //echo '<script>alert('.$params[1].');</script>';
                 if(empty($data)) {
                     $query = "select * from events";
                     $statement = $this->conn->prepare($query);
@@ -48,7 +50,7 @@
             else{                                  
                 $query = "select * from events where id = :id";
                 $statement = $this->conn->prepare($query) ; 
-                $statement->execute([ 'id' => $params[1] ]);
+                $statement->execute([ 'id' => $params[2] ]);
             }
 			
 			return $statement->fetchAll(PDO::FETCH_CLASS);           
