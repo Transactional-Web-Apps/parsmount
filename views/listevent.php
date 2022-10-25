@@ -146,8 +146,8 @@
             $start = $page * $this->perPage;
             //
             $end = min(($page+1)* $this->perPage, count($this->data)) - 1;
-            $html = "<table>";
-            $html .= "</tr>";
+            //$html = "<table>";
+            $html = "</tr>";
             //
             for($i = $start; $i <=$end; $i++){        
                 $html .= "<tr>";
